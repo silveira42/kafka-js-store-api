@@ -6,7 +6,7 @@ export const create = (orderService: OrderService) => async (c: Context) => {
 	try {
 		const body: orderCreateType = await orderCreateSchema.validate(await c.req.json());
 
-		const uid = await orderService.create(body.product, body.price, body.quantity);
+		const uid = await orderService.create(JSON.stringify(body));
 
 		return c.json({ orderId: uid }, 200);
 	} catch (error) {
