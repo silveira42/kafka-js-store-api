@@ -1,12 +1,15 @@
-import { Config } from '../app';
-import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
+import { cors } from 'hono/cors';
+import { serve } from '@hono/node-server';
+import { Config } from '../app';
 import { v1Router } from './v1/routes';
 
 const app = new Hono();
 
 export const restService = (config: Config) => {
 	// App routes
+	app.use('/*', cors());
+
 	app.get('/', (c) => c.json({ message: 'Welcome home!' }, 200));
 	app.get('/hellothere', (c) => c.json({ message: 'General Keboni!' }, 200));
 	app.notFound((c) => c.json({ message: 'Endpoint Not Found' }, 404));
