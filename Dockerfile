@@ -1,12 +1,12 @@
 FROM node:21-alpine
 
 # This is the directory "inside" the container
-WORKDIR /silver-finances-api/
+WORKDIR /kafka-js-store-api/
 
 # Copying necessary files
-COPY public/ /silver-finances-api/public
-COPY src/ /silver-finances-api/src
-COPY package.json /silver-finances-api/
+COPY public/ /kafka-js-store-api/public
+COPY src/ /kafka-js-store-api/src
+COPY package.json /kafka-js-store-api/
 
 # Installing node modules
 RUN npm install

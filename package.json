@@ -1,7 +1,7 @@
 {
-	"name": "silverfinances-api",
+	"name": "kafka-js-store-api",
 	"version": "0.0.1",
-	"description": "Silver Finances API",
+	"description": "API for a store simulation using Kafka",
 	"private": true,
 	"main": "index.js",
 	"scripts": {
