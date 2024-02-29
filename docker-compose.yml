@@ -21,6 +21,12 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       ALLOW_PLAINTEXT_LISTENER: 1
       KAFKAJS_NO_PARTITIONER_WARNING: 1
-
     depends_on:
       - zookeeper
+
+  kafka-store-api:
+    restart: always
+    image: kafka-store-api:latest
+    hostname: store-api
+    ports:
+      - "${API_PORT}:3000"
